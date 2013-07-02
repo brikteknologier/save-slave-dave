@@ -76,5 +76,5 @@ Dave that looks somewhat like this:
 
 ## license
 
-MIT
+MIT. See the LICENSE file.
 
