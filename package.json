@@ -1,6 +1,6 @@
 {
   "name": "save-slave-dave",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a crazy little fellow that watches for changes on an input component and graciously offers to save them",
   "main": "save-slave-dave.js",
   "scripts": {
