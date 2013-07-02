@@ -1,2 +1,2 @@
 require('coffee-script');
-require('./save-slave-dave.coffee')
+module.exports = require('./save-slave-dave.coffee')
