@@ -63,6 +63,9 @@ specifying the following things:
 * `listen` a function that attaches a change event listener to the input
   component. The listener should be fired when changes are made to the control's
   value. Defaults to `function (l) { opts.targetElement.on('keyup', l); }`
+* `saveOnEnter` if `true`, dave will save the content when the enter key is
+  pressed. Not a good idea to set this to true for a textarea. Defaults to true
+  if the input is not a textarea.
 
 ## styling
 

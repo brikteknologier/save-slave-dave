@@ -31,6 +31,7 @@ module.exports = (input, save, opts) ->
   opts.targetElement ?= input
   opts.getValue ?= -> opts.targetElement.val()
   opts.listen ?= (listener) -> opts.targetElement.on('keyup', listener)
+  opts.saveOnEnter ?= input.is('input')
   
   inProgress = false
   previousSavedValue = opts.getValue()
@@ -57,6 +58,15 @@ module.exports = (input, save, opts) ->
     # the user clicked the save button, or if they were actually trying to lose
     # focus on the text input. 250ms is arbitrary, but seems to work.
     setTimeout(checkFocus, 250)
+
+  if opts.saveOnEnter
+    KEYCODE_ENTER = 13
+    opts.targetElement.on 'keyup', (event) ->
+      return if event.keyCode isnt KEYCODE_ENTER
+      e.preventDefault()
+      startSave ->
+        if opts.getValue() == previousSavedValue
+          saveableBubble.removeClass('has-focus')
 
   opts.listen ->
     if (opts.getValue() != previousSavedValue && input.is('.has-focus'))
