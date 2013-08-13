@@ -63,10 +63,11 @@ module.exports = (input, save, opts) ->
     KEYCODE_ENTER = 13
     opts.targetElement.on 'keyup', (event) ->
       return if event.keyCode isnt KEYCODE_ENTER
-      e.preventDefault()
+      event.preventDefault()
       startSave ->
         if opts.getValue() == previousSavedValue
           saveableBubble.removeClass('has-focus')
+
 
   opts.listen ->
     if (opts.getValue() != previousSavedValue && input.is('.has-focus'))
