@@ -44,7 +44,7 @@ var dave = require('save-slave-dave');
 // you couldn't save, you should pass a truthy value as the first argument of
 // the callback
 var saveToDatabase = function(callback) {
-  database.save($("input#amazing-text"
+  database.save($("input#amazing-text").val());
 }
 
 dave("input#amazing-text", saveToDatabase);
