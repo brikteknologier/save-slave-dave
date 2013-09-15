@@ -73,8 +73,12 @@
       });
     }
     opts.listen(function() {
-      if (opts.getValue() !== previousSavedValue && input.is('.has-focus')) {
-        return saveableBubble.addClass('has-focus');
+      if (input.is('.has-focus')) {
+        if (opts.getValue() !== previousSavedValue) {
+          return saveableBubble.addClass('has-focus');
+        } else {
+          return saveableBubble.removeClass('has-focus');
+        }
       }
     });
     setState = function(newState) {
