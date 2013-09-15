@@ -71,8 +71,11 @@ module.exports = (input, save, opts) ->
 
 
   opts.listen ->
-    if (opts.getValue() != previousSavedValue && input.is('.has-focus'))
-      saveableBubble.addClass('has-focus')
+    if input.is('.has-focus')
+      if opts.getValue() != previousSavedValue
+        saveableBubble.addClass('has-focus')
+      else
+        saveableBubble.removeClass('has-focus')
 
   setState = (newState) ->
     saveableBubble.removeClass 'state-active state-error state-success state-saving'
