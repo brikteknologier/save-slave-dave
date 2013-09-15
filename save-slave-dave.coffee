@@ -31,7 +31,7 @@ module.exports = (input, save, opts) ->
   opts.targetElement ?= input
   opts.getValue ?= -> opts.targetElement.val()
   opts.listen ?= (listener) -> opts.targetElement.on('keyup', listener)
-  opts.saveOnEnter ?= input.is('input')
+  opts.saveOnEnter ?= true
   
   inProgress = false
   previousSavedValue = opts.getValue()
@@ -63,6 +63,7 @@ module.exports = (input, save, opts) ->
     KEYCODE_ENTER = 13
     opts.targetElement.on 'keyup', (event) ->
       return if event.keyCode isnt KEYCODE_ENTER
+      return if !input.is('input') and !event.ctrlKey
       event.preventDefault()
       startSave ->
         if opts.getValue() == previousSavedValue
