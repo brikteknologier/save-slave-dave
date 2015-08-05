@@ -29,7 +29,7 @@
     inProgress = false;
     previousSavedValue = opts.getValue();
     saveableBubble = $(template);
-    opts.targetElement.on('unload', function() {
+    opts.targetElement.on('remove', function() {
       return saveableBubble.remove();
     });
     saveableBubble.insertAfter(input);

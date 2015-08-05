@@ -36,7 +36,7 @@ module.exports = (input, save, opts) ->
   inProgress = false
   previousSavedValue = opts.getValue()
   saveableBubble = $(template)
-  opts.targetElement.on('unload', -> saveableBubble.remove())
+  opts.targetElement.on('remove', -> saveableBubble.remove())
   saveableBubble.insertAfter(input)
 
   opts.targetElement.on 'focus', -> input.addClass('has-focus')
