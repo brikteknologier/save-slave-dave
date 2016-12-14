@@ -1,9 +1,9 @@
 template = """
   <div class='saveable-bubble state-active'>
-    <i class='icon-save'></i>
-    <i class='icon-spinner icon-spin'></i>
-    <i class='icon-ok'></i>
-    <i class='icon-remove'></i>
+    <i class='icon fa fa-save'></i>
+    <i class='icon fa fa-spinner fa-spin'></i>
+    <i class='icon fa fa-check'></i>
+    <i class='icon fa fa-times'></i>
   </div>
 """
 

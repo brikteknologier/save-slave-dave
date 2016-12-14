@@ -79,10 +79,7 @@
     content 'Save failed'
 
 
-  .icon-ok
-  .icon-save
-  .icon-spinner
-  .icon-remove
+  .icon
     display none
     position absolute
     font-size 24px
@@ -105,22 +102,22 @@
     &:after
       color color
 
-  &.state-active .icon-save
+  &.state-active .fa-save
     display block
 
   &.state-saving 
     set-background(#e8e642)
-    .icon-spinner
+    .fa-spinner
       display block
 
   &.state-success 
     set-background(#94b73e)
-    .icon-ok
+    .fa-check
       display block
 
   &.state-error 
     set-background(#f83531)
-    .icon-remove
+    .fa-times
       display block
 
 
